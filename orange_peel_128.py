@@ -4,13 +4,13 @@ import numpy as np
 import os
 import glob
 
-
+#dataset
 directory_name = r"C:\Users\Buslab_GG\Desktop\orangepeel_new\15-03-52-ora"
-output = r"C:\Users\Buslab_GG\Desktop\space"
+output_file = r"C:\Users\Buslab_GG\Desktop\space"
 
 
-if not os.path.isdir(output):
-    os.mkdir(output)
+if not os.path.isdir(output_file):
+    os.mkdir(output_file)
 
 for filename in os.listdir(directory_name):
     print(directory_name + "/" + filename)
@@ -40,8 +40,5 @@ for filename in os.listdir(directory_name):
                 continue
             test = img[ y-100 : y+100 , x-100 : x+100 ]
             test = cv2.resize(test, (128, 128), interpolation=cv2.INTER_AREA)
-            cv2.imwrite(output + "/" + filename,test)
+            cv2.imwrite(output_file + "/" + filename,test)
 
-    #img = img[548:686,148:349]
-    #img = cv2.resize(img, (128, 128), interpolation=cv2.INTER_AREA)
-    #cv2.imwrite(output + "/" + filename,img)
